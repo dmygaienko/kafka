@@ -7,9 +7,14 @@ spring:
           brokers: localhost:9092
 
       bindings:
-        greetings-in:
-          destination: greetings
-          contentType: application/json
         greetings-out:
           destination: greetings
           contentType: application/json
+
+        part-greetings-out:
+          destination: partGreetings
+          contentType: application/json
+          producer:
+#            partitionKeyExpression: payload.id
+#            partitionKeyExpression: "0"
+            partitionKeyExpression: payload.id

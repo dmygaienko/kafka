@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Greetings {
 
+    private Long id;
     private long timestamp;
     private String message;
 

@@ -21,13 +21,14 @@ public class GreetingsService {
 
     public void sendGreeting(String message) {
         Greetings greetings = Greetings.builder()
+                .id(1L)
                 .message(message)
                 .timestamp(System.currentTimeMillis())
                 .build();
 
         log.info("Sending greetings {}", greetings);
 
-        greetingsStreams.outboundGreetings()
+        greetingsStreams.partOutboundGreetings()
                 .send(MessageBuilder
                         .withPayload(greetings)
                         .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)
