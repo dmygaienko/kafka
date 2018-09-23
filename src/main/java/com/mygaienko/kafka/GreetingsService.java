@@ -19,9 +19,9 @@ public class GreetingsService {
         this.greetingsStreams = greetingsStreams;
     }
 
-    public void sendGreeting(String message) {
+    public void sendGreeting(String message, String id) {
         Greetings greetings = Greetings.builder()
-                .id(1L)
+                .id(Long.valueOf(id))
                 .message(message)
                 .timestamp(System.currentTimeMillis())
                 .build();

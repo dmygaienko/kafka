@@ -20,7 +20,8 @@ public class GreetingsController {
 
     @GetMapping("/greetings")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void greetings(@RequestParam("message") String message) {
-        greetingsService.sendGreeting(message);
+    public void greetings(@RequestParam("message") String message,
+                          @RequestParam("id") String id) {
+        greetingsService.sendGreeting(message, id);
     }
 }

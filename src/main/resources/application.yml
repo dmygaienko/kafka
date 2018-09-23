@@ -5,6 +5,7 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
+          auto-add-partitions: true
 
       bindings:
         greetings-out:
@@ -15,6 +16,5 @@ spring:
           destination: partGreetings
           contentType: application/json
           producer:
-#            partitionKeyExpression: payload.id
-#            partitionKeyExpression: "0"
             partitionKeyExpression: payload.id
+            partitionCount: ${INSTANCE_COUNT:2}
