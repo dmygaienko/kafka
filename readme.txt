@@ -12,3 +12,5 @@ https://dzone.com/articles/kafka-producer-and-consumer-example
 
 http://localhost:8080/greetings?message=hello&id=1
 http://localhost:8080/greetings?message=hello&id=2
+
+--------------------------------------------------------------
